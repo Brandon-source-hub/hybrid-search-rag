@@ -1,0 +1,1 @@
+This project implements a small hybrid search RAG system. The system will load documents, split them into chunks, create embeddings, retrieve relevant content, and generate answers.

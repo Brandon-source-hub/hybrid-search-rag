@@ -1,0 +1,8 @@
+Product: VisionX Camera 
+Product ID: VX-2026 
+Error Code A1034: 
+The error indicates that the camera calibration file cannot be loaded. 
+Error Code B201: 
+The system cannot connect to the camera. 
+Firmware Version: 4.7.2 
+To solve Error Code A1034, reinstall the calibration configuration and restart the device.

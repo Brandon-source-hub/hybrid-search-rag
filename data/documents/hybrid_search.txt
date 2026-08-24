@@ -1,0 +1,1 @@
+Hybrid search combines keyword search and vector search. Keyword search is useful for exact terms, while vector search is useful for semantic similarity.

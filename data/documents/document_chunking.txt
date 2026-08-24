@@ -1,0 +1,1 @@
+Document chunking divides a long document into smaller pieces. Good chunking strategies improve retrieval quality and help language models process relevant context.

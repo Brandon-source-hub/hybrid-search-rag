@@ -1,0 +1,1 @@
+Text embeddings represent the meaning of text as numerical vectors. Similar texts usually have embeddings that are close to each other in vector space.

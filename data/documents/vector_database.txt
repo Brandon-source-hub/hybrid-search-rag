@@ -1,0 +1,1 @@
+A vector database stores numerical representations of data called embeddings. It can efficiently search for vectors that are similar to a query vector.
