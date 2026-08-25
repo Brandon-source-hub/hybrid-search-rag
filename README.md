@@ -70,7 +70,7 @@ python main.py
 ## Roadmap
 
 - [x] Dense retrieval baseline
-- [ ] BM25 retrieval
+- [x] BM25 retrieval
 - [ ] Hybrid retrieval
 - [ ] Reciprocal Rank Fusion
 - [ ] Cross-encoder reranking
