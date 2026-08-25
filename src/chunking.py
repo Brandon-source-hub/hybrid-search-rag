@@ -33,6 +33,7 @@ def chunk_documents(documents):
             all_chunks.append(
                 {
                     "source": document["source"],
+                    "chunk_id": f"{document['source']}:{i}",
                     "chunk_index": i,
                     "text": chunk
                 }

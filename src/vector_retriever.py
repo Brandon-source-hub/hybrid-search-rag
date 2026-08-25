@@ -21,7 +21,10 @@ class VectorRetriever:
             results.append(
                 {
                     "source": chunk["source"],
-                    "chunk_index": chunk["chunk_index"],
+                    "chunk_id": chunk.get(
+                        "chunk_id",
+                        f"{chunk['source']}:{chunk['chunk_index']}"
+                    ),
                     "text": chunk["text"],
                     "score": float(score)
                 }
