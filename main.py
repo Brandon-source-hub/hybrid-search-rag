@@ -3,7 +3,7 @@ from src.chunking import chunk_documents
 from src.embeddings import EmbeddingModel
 from src.vector_retriever import VectorRetriever
 from src.bm25_retriever import BM25Retriever
-
+from src.hybrid_retriever import HybridRetriever
 
 DATA_PATH = "data/documents"
 
@@ -48,6 +48,12 @@ def main():
         chunks
     )
 
+    hybrid_retriever = HybridRetriever(
+    dense_retriever,
+    bm25_retriever,
+    embedding_model
+    )
+
     print("\nRetrievers ready.")
 
     # 7. Query loop
@@ -82,6 +88,14 @@ def main():
             top_k=5
         )
 
+        # -----------------------------
+        # Hybrid Retrieval
+        # -----------------------------
+
+        hybrid_results = hybrid_retriever.search(
+            query,
+            top_k=5
+        )
         # -----------------------------
         # Print Dense Results
         # -----------------------------
@@ -142,6 +156,22 @@ def main():
                 result["text"][:500]
             )
 
+            print("-" * 80)
+
+        # -----------------------------
+        # Print Hybrid Results
+        # -----------------------------
+        
+
+        print("\n===== Hybrid Retrieval (RRF) =====\n")
+
+        for i, result in enumerate(hybrid_results, start=1):
+
+            print(f"Result {i}")
+            print(f"RRF Score: {result['rrf_score']:.6f}")
+            print(f"Source: {result['source']}")
+            print(f"Chunk ID: {result['chunk_id']}")
+            print(result["text"][:500])
             print("-" * 80)
 
 

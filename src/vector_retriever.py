@@ -17,6 +17,8 @@ class VectorRetriever:
 
         results = []
         for score,idx in zip(scores[0], indices[0]):
+            if idx == -1:
+                continue
             chunk = self.chunks[idx]
             results.append(
                 {

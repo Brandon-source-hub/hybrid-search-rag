@@ -70,10 +70,11 @@ python main.py
 ## Roadmap
 
 - [x] Dense retrieval baseline
-- [x] BM25 retrieval
-- [ ] Hybrid retrieval
-- [ ] Reciprocal Rank Fusion
+- [x] BM25 sparse retrieval
+- [x] Hybrid retrieval
+- [x] Reciprocal Rank Fusion
 - [ ] Cross-encoder reranking
 - [ ] Retrieval evaluation
+- [ ] LLM generation
 - [ ] FastAPI backend
 - [ ] Docker deployment
