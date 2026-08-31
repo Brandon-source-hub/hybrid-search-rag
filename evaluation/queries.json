@@ -1,0 +1,50 @@
+[
+  {
+    "query": "A1034",
+    "relevant_chunks": [
+      "product_manual.txt:0"
+    ]
+  },
+  {
+    "query": "VX-2026",
+    "relevant_chunks": [
+      "product_manual.txt:0"
+    ]
+  },
+  {
+    "query": "How can I fix a camera configuration problem?",
+    "relevant_chunks": [
+      "product_manual.txt:0"
+    ]
+  },
+  {
+    "query": "How are similar texts represented numerically?",
+    "relevant_chunks": [
+      "text_embeddings.txt:0"
+    ]
+  },
+  {
+    "query": "What is hybrid search?",
+    "relevant_chunks": [
+      "hybrid_search.txt:0"
+    ]
+  },
+  {
+    "query": "What does a vector database store?",
+    "relevant_chunks": [
+      "vector_database.txt:0"
+    ]
+  },
+  {
+    "query": "What is document chunking?",
+    "relevant_chunks": [
+      "document_chunking.txt:0"
+    ]
+  },
+  {
+    "query": "What is retrieval augmented generation?",
+    "relevant_chunks": [
+      "rag_introduction.txt:0"
+    ]
+  }
+]
