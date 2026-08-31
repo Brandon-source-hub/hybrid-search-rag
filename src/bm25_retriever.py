@@ -27,6 +27,10 @@ class BM25Retriever:
         results = []
 
         for idx in ranked_indices:
+
+            if scores[idx] <= 0:
+                continue
+            
             chunk = self.chunks[idx]
 
             results.append({
