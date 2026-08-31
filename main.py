@@ -4,6 +4,7 @@ from src.embeddings import EmbeddingModel
 from src.vector_retriever import VectorRetriever
 from src.bm25_retriever import BM25Retriever
 from src.hybrid_retriever import HybridRetriever
+from src.reranker import CrossEncoderReranker
 
 DATA_PATH = "data/documents"
 
@@ -56,6 +57,8 @@ def main():
 
     print("\nRetrievers ready.")
 
+    reranker = CrossEncoderReranker()
+
     # 7. Query loop
     while True:
 
@@ -94,6 +97,12 @@ def main():
 
         hybrid_results = hybrid_retriever.search(
             query,
+            top_k=5
+        )
+
+        reranked_result = reranker.rerank(
+            query,
+            hybrid_results,
             top_k=5
         )
         # -----------------------------
@@ -173,6 +182,24 @@ def main():
             print(f"Chunk ID: {result['chunk_id']}")
             print(result["text"][:500])
             print("-" * 80)
+
+        # -----------------------------
+        # Print Reranker Results
+        # -----------------------------
+
+        print("\n===== Reranked Results =====\n")
+
+        for i, result in enumerate(reranked_result, start=1):
+
+            print(f"Result {i}")
+            print(f"Rerank Score: {result['rerank_score']:.4f}")
+            print(f"Source: {result['source']}")
+            print(f"Chunk ID: {result['chunk_id']}")
+            print(result["text"][:500])
+            print("-" * 80)
+                
+
+
 
 
 if __name__ == "__main__":
